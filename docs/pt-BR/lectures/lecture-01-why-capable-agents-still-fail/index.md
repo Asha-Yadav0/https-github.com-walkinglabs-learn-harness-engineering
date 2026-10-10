@@ -17,8 +17,6 @@ Quando isso acontece, a primeira reação da maioria das pessoas é: “o modelo
 
 ## Mesmo Cavalo, Destinos Diferentes
 
-> Mesmo modelo e prompt, mas diferentes orçamentos de tempo e custo. Não é um experimento de orçamento igual isolando um componente. A jogabilidade essencial funcionou, mas havia defeitos. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Mesmo modelo e prompt, mas diferentes orçamentos de tempo e custo. Não é um experimento de orçamento igual isolando um componente. A jogabilidade essencial funcionou, mas havia defeitos. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

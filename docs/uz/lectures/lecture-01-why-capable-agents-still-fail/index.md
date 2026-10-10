@@ -21,8 +21,6 @@ Ammo bu raqamlar ortida intuitsiyaga zid bir haqiqat yashiringan.
 
 ## Bir xil ot, turlicha taqdir
 
-> Model va prompt bir xil, vaqt va xarajat budjetlari boshqa. Bitta komponentni ajratgan teng budjetli tajriba emas. Asosiy o‘yin ishlagan, ammo xatolar qolgan. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Model va prompt bir xil, vaqt va xarajat budjetlari boshqa. Bitta komponentni ajratgan teng budjetli tajriba emas. Asosiy o‘yin ishlagan, ammo xatolar qolgan. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

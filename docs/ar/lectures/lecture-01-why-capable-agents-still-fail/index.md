@@ -21,8 +21,6 @@ Claude Sonnet 4.5 · 2025-09-29 · SWE-bench Verified
 
 ## الحصان نفسه، مصائر مختلفة
 
-> النموذج والطلب متماثلان، لكن ميزانيتي الوقت والتكلفة مختلفتان. ليست تجربة متساوية الميزانية تعزل مكونًا واحدًا. عملت وظائف اللعب الأساسية مع بقاء عيوب. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 النموذج والطلب متماثلان، لكن ميزانيتي الوقت والتكلفة مختلفتان. ليست تجربة متساوية الميزانية تعزل مكونًا واحدًا. عملت وظائف اللعب الأساسية مع بقاء عيوب. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

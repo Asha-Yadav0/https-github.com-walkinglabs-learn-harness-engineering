@@ -17,8 +17,6 @@ Khi chuyện này xảy ra, phản ứng đầu tiên của hầu hết mọi ng
 
 ## Cùng con ngựa, số phận khác nhau
 
-> Cùng mô hình và prompt nhưng khác ngân sách thời gian và chi phí. Không phải thí nghiệm cùng ngân sách tách riêng một thành phần. Chức năng chơi cơ bản hoạt động nhưng vẫn còn lỗi. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Cùng mô hình và prompt nhưng khác ngân sách thời gian và chi phí. Không phải thí nghiệm cùng ngân sách tách riêng một thành phần. Chức năng chơi cơ bản hoạt động nhưng vẫn còn lỗi. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

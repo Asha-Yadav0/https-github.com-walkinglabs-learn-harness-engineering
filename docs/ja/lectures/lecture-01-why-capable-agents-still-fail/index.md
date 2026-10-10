@@ -21,8 +21,6 @@ Claude Sonnet 4.5 · 2025-09-29 · SWE-bench Verified
 
 ## 同じ馬、違う運命
 
-> モデルとプロンプトは同じですが、時間と費用の予算が異なります。同予算で一つの構成要素を分離した実験ではありません。基本的なゲーム操作は動作しましたが、不具合は残りました。 [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 モデルとプロンプトは同じですが、時間と費用の予算が異なります。同予算で一つの構成要素を分離した実験ではありません。基本的なゲーム操作は動作しましたが、不具合は残りました。 [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

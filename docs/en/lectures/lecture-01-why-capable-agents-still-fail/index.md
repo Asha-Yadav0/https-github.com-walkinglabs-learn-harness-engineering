@@ -17,8 +17,6 @@ When this happens, most people's first reaction is "the model isn't good enough 
 
 ## Same Horse, Different Fates
 
-> Same model and prompt, different runtime and cost budgets. This is a reported application comparison, not an equal-budget experiment isolating one harness component. Core gameplay worked, but bugs and limitations remained. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Same model and prompt, different runtime and cost budgets. This is a reported application comparison, not an equal-budget experiment isolating one harness component. Core gameplay worked, but bugs and limitations remained. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

@@ -21,8 +21,6 @@ Pero detrás de estos números hay una verdad contraintuitiva.
 
 ## El mismo caballo, destinos distintos
 
-> Mismo modelo y prompt, pero distintos presupuestos de tiempo y coste. No es un experimento de igual presupuesto que aísle un componente. El juego funcionaba en lo esencial, pero conservaba errores. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Mismo modelo y prompt, pero distintos presupuestos de tiempo y coste. No es un experimento de igual presupuesto que aísle un componente. El juego funcionaba en lo esencial, pero conservaba errores. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

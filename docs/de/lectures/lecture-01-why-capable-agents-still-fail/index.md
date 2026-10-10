@@ -21,8 +21,6 @@ Hinter diesen Zahlen steckt aber eine kontraintuitive Wahrheit.
 
 ## Gleiches Pferd, anderes Ergebnis
 
-> Gleiches Modell und gleicher Prompt, aber unterschiedliche Laufzeit- und Kostenbudgets. Kein Experiment mit gleichem Budget zur Isolation eines einzelnen Bestandteils. Das Spiel funktionierte im Kern, hatte aber weiterhin Fehler. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Gleiches Modell und gleicher Prompt, aber unterschiedliche Laufzeit- und Kostenbudgets. Kein Experiment mit gleichem Budget zur Isolation eines einzelnen Bestandteils. Das Spiel funktionierte im Kern, hatte aber weiterhin Fehler. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |
