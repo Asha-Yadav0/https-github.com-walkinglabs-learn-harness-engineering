@@ -23,8 +23,6 @@ Claude Sonnet 4.5 · 2025-09-29 · SWE-bench Verified
 
 ## 같은 말(馬), 다른 결과
 
-> 모델과 프롬프트는 같지만 시간과 비용 예산이 다릅니다. 동일 예산에서 구성 요소 하나를 분리한 실험이 아닙니다. 핵심 게임 기능은 작동했으나 결함이 남았습니다. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 모델과 프롬프트는 같지만 시간과 비용 예산이 다릅니다. 동일 예산에서 구성 요소 하나를 분리한 실험이 아닙니다. 핵심 게임 기능은 작동했으나 결함이 남았습니다. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

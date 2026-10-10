@@ -21,8 +21,6 @@ Derrière ces chiffres se cache pourtant une vérité contre-intuitive.
 
 ## Même cheval, destins différents
 
-> Même modèle et même prompt, mais budgets de temps et de coût différents. Ce n’est pas une expérience à budget égal isolant un composant. Le jeu fonctionnait au niveau essentiel, avec des défauts persistants. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Même modèle et même prompt, mais budgets de temps et de coût différents. Ce n’est pas une expérience à budget égal isolant un composant. Le jeu fonctionnait au niveau essentiel, avec des défauts persistants. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

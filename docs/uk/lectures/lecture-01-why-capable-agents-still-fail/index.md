@@ -17,8 +17,6 @@ Claude Sonnet 4.5 · 2025-09-29 · SWE-bench Verified
 
 ## Один кінь, дві долі
 
-> Модель і запит однакові, але бюджети часу та вартості різні. Це не експеримент із рівним бюджетом, що ізолює один компонент. Основна гра працювала, але залишалися дефекти. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Модель і запит однакові, але бюджети часу та вартості різні. Це не експеримент із рівним бюджетом, що ізолює один компонент. Основна гра працювала, але залишалися дефекти. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

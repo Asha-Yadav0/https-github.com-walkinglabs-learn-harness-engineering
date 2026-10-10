@@ -17,8 +17,6 @@ Claude Sonnet 4.5 · 2025-09-29 · SWE-bench Verified
 
 ## 同一匹馬，兩種命運
 
-> 模型和提示相同，但執行時間與費用預算不同。這是公開的應用建置對比，不是等預算、單獨隔離某個 harness 元件的實驗。核心遊戲功能可用，仍有缺陷和局限。 [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 模型和提示相同，但執行時間與費用預算不同。這是公開的應用建置對比，不是等預算、單獨隔離某個 harness 元件的實驗。核心遊戲功能可用，仍有缺陷和局限。 [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |

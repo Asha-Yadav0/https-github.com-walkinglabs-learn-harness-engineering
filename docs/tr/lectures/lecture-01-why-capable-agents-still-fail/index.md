@@ -21,8 +21,6 @@ Ama bu sayıların ardında sezgilere ters bir gerçek yatıyor.
 
 ## Aynı at, farklı kaderler
 
-> Model ve prompt aynı, zaman ve maliyet bütçeleri farklıdır. Tek bileşeni ayıran eşit bütçeli deney değildir. Temel oyun çalıştı, fakat hatalar kaldı. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
-
 Model ve prompt aynı, zaman ve maliyet bütçeleri farklıdır. Tek bileşeni ayıran eşit bütçeli deney değildir. Temel oyun çalıştı, fakat hatalar kaldı. [Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 | Opus 4.5 | Duration | USD |
