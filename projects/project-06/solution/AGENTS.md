@@ -77,12 +77,19 @@ When adding new features, update the relevant doc before writing code.
 A feature is "done" when:
 
 1. TypeScript compiles without errors (`npm run check`).
-2. The app launches and the window is visible.
-3. The feature appears in `feature_list.json` with status `"pass"` and evidence.
-4. The code respects Electron layer boundaries.
-5. Structured logging covers all service operations.
-6. `docs/ARCHITECTURE.md` and/or `docs/PRODUCT.md` are updated.
-7. `clean-state-checklist.md` passes all checks.
+2. The test suite passes (`npm test`), and the feature's service behavior is covered by a test in `tests/`. A bug fix starts with a test that fails without the fix.
+3. The app launches and the window is visible.
+4. The feature appears in `feature_list.json` with status `"pass"` and evidence that names the tests that cover it. Prose alone ("verified working") is not evidence.
+5. The code respects Electron layer boundaries.
+6. Structured logging covers all service operations.
+7. `docs/ARCHITECTURE.md` and/or `docs/PRODUCT.md` are updated.
+8. `clean-state-checklist.md` passes all checks.
+
+## Tests
+
+- `tests/` holds the Vitest suite; it runs in Node against a temporary data directory, without launching Electron.
+- One file per service, plus `ipc-handlers.test.ts` (every IPC channel is wired) and `pipeline.e2e.test.ts` (import, index, ask, restart, reset with the bundled sample documents, checked by `scripts/cleanup-scanner.sh`).
+- `bash init.sh` runs the type checks and the suite before the build; a red test stops the session start.
 
 ## Session Handoff
 

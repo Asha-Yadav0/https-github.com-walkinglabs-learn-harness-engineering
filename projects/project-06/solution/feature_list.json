@@ -119,8 +119,16 @@
       "name": "Complete Harness",
       "description": "All harness files present: AGENTS.md, CLAUDE.md, feature_list.json, init.sh, session-handoff.md, clean-state-checklist.md, evaluator-rubric.md, quality-document.md, docs/",
       "status": "pass",
-      "evidence": "All files present and complete. init.sh verifies build. clean-state-checklist.md has 15 check items. docs/ has ARCHITECTURE.md, PRODUCT.md, RELIABILITY.md.",
-      "testedAt": "2026-03-30T11:50:00Z"
+      "evidence": "All files present and complete. init.sh runs type checks, the test suite and the build. clean-state-checklist.md has 15 check items. docs/ has ARCHITECTURE.md, PRODUCT.md, RELIABILITY.md.",
+      "testedAt": "2026-10-16T12:00:00Z"
+    },
+    {
+      "id": "automated-tests",
+      "name": "Automated Test Suite",
+      "description": "Vitest suite covering every service, the IPC wiring and the full import-index-ask-restart-reset pipeline. Runs from init.sh and blocks on failure.",
+      "status": "pass",
+      "evidence": "npm test: 7 files, 64 passed, 1 todo (duplicate filenames share one original copy). Written against the unmodified services first: 6 failures exposed two bugs, both fixed -- single-document indexing did not register the document in index-meta.json, and deleting a document left its chunks, index entry and an empty content file behind, so Q&A kept citing it.",
+      "testedAt": "2026-10-16T12:00:00Z"
     }
   ]
 }
