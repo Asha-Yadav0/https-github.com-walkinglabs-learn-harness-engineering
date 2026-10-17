@@ -23,8 +23,8 @@
       "name": "Document Import",
       "description": "Users can import .txt and .md files via file picker. Documents appear in list with metadata. File validation (size limit).",
       "status": "pass",
-      "evidence": "DocumentService.importDocument() validates file existence, checks 10MB limit, copies file, stores content, creates metadata. ImportPanel triggers import via file input.",
-      "testedAt": "2026-03-30T10:15:00Z"
+      "evidence": "Fixed 2026-10-17: the + Import button was a console.log stub (ImportPanel was never rendered, and File.path no longer exists in Electron 33). It now opens a native multi-select dialog in the main process (documents:pick-and-import) and imports each file, reporting per-file failures. Covered by tests/ipc-handlers.test.ts (PICK_AND_IMPORT_DOCUMENTS) and tests/document-service.test.ts.",
+      "testedAt": "2026-10-17T12:00:00Z"
     },
     {
       "id": "document-detail",
@@ -95,8 +95,8 @@
       "name": "Status Bar",
       "description": "Real-time display of index status, document count, indexed count, and last activity timestamp.",
       "status": "pass",
-      "evidence": "StatusBar.tsx shows colored status indicator, document count, indexed count, and formatted timestamp. Updated after document operations and Q&A.",
-      "testedAt": "2026-03-30T11:30:00Z"
+      "evidence": "Fixed 2026-10-17: status IPC channels returned IndexingService's {status,totalDocuments,lastIndexed} while StatusBar reads AppStatus {indexStatus,documentsLoaded,lastActivity}, so it showed a blank index state and 'Documents: undefined' after any action. Channels now map through toAppStatus(). Covered by tests/ipc-handlers.test.ts (status channels return the AppStatus shape).",
+      "testedAt": "2026-10-17T12:00:00Z"
     },
     {
       "id": "benchmark-scripts",
@@ -127,7 +127,7 @@
       "name": "Automated Test Suite",
       "description": "Vitest suite covering every service, the IPC wiring and the full import-index-ask-restart-reset pipeline. Runs from init.sh and blocks on failure.",
       "status": "pass",
-      "evidence": "npm test: 7 files, 64 passed, 1 todo (duplicate filenames share one original copy). Written against the unmodified services first: 6 failures exposed two bugs, both fixed -- single-document indexing did not register the document in index-meta.json, and deleting a document left its chunks, index entry and an empty content file behind, so Q&A kept citing it.",
+      "evidence": "npm test: 7 files, 70 passed, 1 todo (duplicate filenames share one original copy). Written against the unmodified services first: 6 failures exposed two bugs, both fixed -- single-document indexing did not register the document in index-meta.json, and deleting a document left its chunks, index entry and an empty content file behind, so Q&A kept citing it.",
       "testedAt": "2026-10-16T12:00:00Z"
     }
   ]
