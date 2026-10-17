@@ -7,25 +7,34 @@ set -euo pipefail
 echo "=== Project 06 Capstone Init ==="
 echo ""
 
-echo "[1/6] Installing dependencies..."
+echo "[1/7] Installing dependencies..."
 npm install
 echo ""
 
-echo "[2/6] Running type checks (app + tests)..."
+echo "[2/7] Running type checks (app + tests)..."
 npm run check
 echo ""
 
-echo "[3/6] Running test suite..."
+echo "[3/7] Running unit test suite..."
 npm test
 echo ""
 
-echo "[4/6] Building project..."
+echo "[4/7] Building project..."
 npm run build
 echo ""
 
-echo "[5/6] Verifying harness files..."
+echo "[5/7] Running end-to-end tests in a real Electron window..."
+# Linux without a display (CI, containers) needs a virtual one.
+if [ "$(uname)" = "Linux" ] && [ -z "${DISPLAY:-}" ] && command -v xvfb-run >/dev/null 2>&1; then
+  xvfb-run -a npm run test:e2e
+else
+  npm run test:e2e
+fi
+echo ""
+
+echo "[6/7] Verifying harness files..."
 FILES_OK=true
-for file in AGENTS.md CLAUDE.md feature_list.json clean-state-checklist.md session-handoff.md evaluator-rubric.md quality-document.md vitest.config.ts; do
+for file in AGENTS.md CLAUDE.md feature_list.json clean-state-checklist.md session-handoff.md evaluator-rubric.md quality-document.md vitest.config.ts vitest.e2e.config.ts; do
   if [ ! -f "$file" ]; then
     echo "  MISSING: $file"
     FILES_OK=false
@@ -53,7 +62,7 @@ for script in scripts/benchmark.sh scripts/cleanup-scanner.sh scripts/dev.js; do
 done
 echo ""
 
-echo "[6/6] Verifying sample data..."
+echo "[7/7] Verifying sample data..."
 for sample in data/sample-documents/design-notes.md data/sample-documents/meeting-summary.txt data/sample-documents/retrieval-plan.md; do
   if [ ! -f "$sample" ]; then
     echo "  MISSING: $sample"
@@ -65,7 +74,7 @@ done
 echo ""
 
 if [ "$FILES_OK" = true ]; then
-  echo "=== Init complete. Type checks, tests and build passed. ==="
+  echo "=== Init complete. Type checks, unit tests, build and end-to-end tests passed. ==="
   echo "Run 'npm run dev' to launch the application."
   echo "Run 'bash scripts/benchmark.sh' to run performance benchmarks."
   echo "Run 'bash scripts/cleanup-scanner.sh' to check for stale artifacts."

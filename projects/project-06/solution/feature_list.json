@@ -7,8 +7,8 @@
       "name": "Window Launch",
       "description": "Electron app opens a BrowserWindow with correct dimensions, preload script, and secure webPreferences",
       "status": "pass",
-      "evidence": "main.ts creates 1200x800 BrowserWindow with contextIsolation=true, nodeIntegration=false, and typed preload script",
-      "testedAt": "2026-03-30T10:00:00Z"
+      "evidence": "Fixed 2026-10-17: the preload was compiled by tsc with require('../shared/types'), which a sandboxed preload cannot load, so contextBridge never ran and window.knowledgeBase was undefined -- every UI action failed. scripts/build-preload.js now bundles it with esbuild. Covered by tests/preload-bundle.test.ts and tests-e2e/app.e2e.ts (exposes the preload bridge).",
+      "testedAt": "2026-10-17T12:00:00Z"
     },
     {
       "id": "document-list",
@@ -23,7 +23,7 @@
       "name": "Document Import",
       "description": "Users can import .txt and .md files via file picker. Documents appear in list with metadata. File validation (size limit).",
       "status": "pass",
-      "evidence": "Fixed 2026-10-17: the + Import button was a console.log stub (ImportPanel was never rendered, and File.path no longer exists in Electron 33). It now opens a native multi-select dialog in the main process (documents:pick-and-import) and imports each file, reporting per-file failures. Covered by tests/ipc-handlers.test.ts (PICK_AND_IMPORT_DOCUMENTS) and tests/document-service.test.ts.",
+      "evidence": "Fixed 2026-10-17: the + Import button was a console.log stub (ImportPanel was never rendered, and File.path no longer exists in Electron 33). It now opens a native multi-select dialog in the main process (documents:pick-and-import) and imports each file, reporting per-file failures. Covered by tests/ipc-handlers.test.ts (PICK_AND_IMPORT_DOCUMENTS) and tests/document-service.test.ts. End-to-end: tests-e2e/app.e2e.ts imports the three sample files through the stubbed dialog.",
       "testedAt": "2026-10-17T12:00:00Z"
     },
     {
@@ -125,10 +125,10 @@
     {
       "id": "automated-tests",
       "name": "Automated Test Suite",
-      "description": "Vitest suite covering every service, the IPC wiring and the full import-index-ask-restart-reset pipeline. Runs from init.sh and blocks on failure.",
+      "description": "Vitest unit suite covering every service, IPC wiring and the preload bundle, plus a Playwright end-to-end suite that drives the built app in a real Electron window. Both run from init.sh and block on failure.",
       "status": "pass",
-      "evidence": "npm test: 7 files, 70 passed, 1 todo (duplicate filenames share one original copy). Written against the unmodified services first: 6 failures exposed two bugs, both fixed -- single-document indexing did not register the document in index-meta.json, and deleting a document left its chunks, index entry and an empty content file behind, so Q&A kept citing it.",
-      "testedAt": "2026-10-16T12:00:00Z"
+      "evidence": "npm test: 8 files, 73 passed, 1 todo. npm run test:e2e: 8 passed. Unit suite written first against the unmodified services exposed two service bugs (single-document indexing not registered; delete leaving chunks and index entry). Running the app on Windows then exposed three UI bugs the unit suite could not see: unbundled sandboxed preload, stub + Import button, and status field mismatch. The e2e suite fails 7 of 8 against the old preload.",
+      "testedAt": "2026-10-17T12:00:00Z"
     }
   ]
 }

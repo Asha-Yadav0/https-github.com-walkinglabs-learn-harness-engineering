@@ -87,9 +87,11 @@ A feature is "done" when:
 
 ## Tests
 
-- `tests/` holds the Vitest suite; it runs in Node against a temporary data directory, without launching Electron.
-- One file per service, plus `ipc-handlers.test.ts` (every IPC channel is wired) and `pipeline.e2e.test.ts` (import, index, ask, restart, reset with the bundled sample documents, checked by `scripts/cleanup-scanner.sh`).
-- `bash init.sh` runs the type checks and the suite before the build; a red test stops the session start.
+- `tests/` holds the unit suite (`npm test`); it runs in Node against a temporary data directory, without launching Electron.
+- One file per service, plus `ipc-handlers.test.ts` (every IPC channel is wired, status channels return the `AppStatus` shape the renderer reads), `preload-bundle.test.ts` (the sandboxed preload requires nothing but `electron`) and `pipeline.e2e.test.ts` (import, index, ask, restart, reset with the bundled sample documents, checked by `scripts/cleanup-scanner.sh`).
+- `tests-e2e/` drives the built app in a real Electron window with Playwright (`npm run test:e2e`, after `npm run build`): preload bridge, import through a stubbed file dialog, indexing, Q&A, delete. It uses a throwaway profile via `--user-data-dir`, never your real data. The unit suite cannot see a broken preload or UI wiring; this one can.
+- `bash init.sh` runs type checks, unit tests, build and end-to-end tests; a red test stops the session start.
+- Never mark a UI feature `pass` without an end-to-end test that clicks through it.
 
 ## Session Handoff
 

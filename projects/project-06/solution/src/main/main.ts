@@ -19,6 +19,9 @@ function createWindow() {
       preload: path.join(__dirname, '..', 'preload', 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
+      // The preload can only require('electron') in the sandbox, so it is
+      // bundled by scripts/build-preload.js.
+      sandbox: true,
     },
     title: 'Knowledge Base',
   });

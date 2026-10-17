@@ -14,5 +14,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["tests", "src/services", "src/shared", "src/main/ipc-handlers.ts", "vitest.config.ts"]
+  "include": ["tests", "tests-e2e", "vitest.e2e.config.ts", "src/services", "src/shared", "src/main/ipc-handlers.ts", "vitest.config.ts"]
 }
